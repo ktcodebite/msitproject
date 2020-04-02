@@ -13,3 +13,6 @@ The purpose of building a video recommendation engine demonstrator for a VCMS is
 
 This demonstrator project can be used by VCMS companies to plug in their private video and user data to evaluate the user experience amongst stakeholders and also in usability studies.
 
+The project was created directly from publically available data and source code. The references to the data and source code can be found here:
+
+
