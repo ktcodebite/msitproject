@@ -45,7 +45,7 @@
                     });
         }
 
-        function add_movie(id, recs) {
+        function add_movie(id, recs, index) {
             $.getJSON(get_url(id), function(mov) {
                 image_url = 'http://image.tmdb.org/t/p/w500/'
                 + mov.movie_results[0].poster_path
@@ -65,7 +65,14 @@
                 yolo = document.createElement("p")
                 yolo.setAttribute('style','padding-bottom: 10px; overflow: hidden;')
 
-                yolo.innerHTML =  mov.movie_results[0].title.substring(0,14) + "..."
+                yolo.innerHTML =  String(index+1) + ". " + mov.movie_results[0].title.substring(0,20) + "..."
+
+                if(mov.movie_results[0].title.length > 20){
+                    yolo.innerHTML =  String(index+1) + ". " + mov.movie_results[0].title.substring(0,20) + "..."
+                }
+                else{
+                    yolo.innerHTML =  String(index+1) + ". " + mov.movie_results[0].title
+                }
 
                 a.appendChild(yolo)
 
@@ -87,7 +94,7 @@
 
                         result.data.forEach(function(element, index, array) {
 
-                            add_movie(element.id, recs)
+                            add_movie(element.id, recs, index)
 
                         });
                     }
