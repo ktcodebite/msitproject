@@ -11,7 +11,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
 
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,49 +29,39 @@
     </script>
 
       {% block head %}{% endblock head %}
+      <style>
+        img{
+          border-radius: 5px;
+        }
+      </style>
 </head>
-<body>
+<body style="background-color: lightgray;">
     <div class="container">
-        <nav class="navbar navbar-inverse no-padding">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle"
-                        data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Video Recommender</a>
-                <a href="/analytics/user/{{user_id}}/">User: {{ user_id }} </a>
+                <a class="navbar-brand" href="/">Recommendation Engine Demonstrator</a>
+              </div>
+          
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="/analytics/user/{{user_id}}/">Unique Id: {{ user_id }} </a></li>
+                </ul>
+                
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
 
-            </div>
-            <!-- Search -->
-            <!-- <div class="nav nav-pills pull-right">
+        <div class="row" style="margin-left: 0 !important;">
 
-                <form class="navbar-form" action="/movies/search/">
-                    <div class="form-group" style="display:inline;">
-                        <input type="text" class="form-control" placeholder="Search" name="q" style="bg-color='gray'" maxlength="40">
-                        <button class="input-group-addon" style="width: 40px"><i class="glyphicon glyphicon-search" title="Search"></i></button>
-                    </div>
-                  </form>
-            </div> -->
-        </nav>
-        <!-- end of top -->
-
-        <div class="row">
-            <!-- <div class="col-sm-2 sidebar collapse navbar-collapse">
-                <div class="well">
-                    <strong>Genres</strong><br/>
-                    <ul class="nav nav-sidebar">
-                    {% if genres %}
-                    {% for genre in genres %}
-                        <li> <a href="/movies/genre/{{genre.name}}"
-                                onclick="add_impression({{ user_id }}, 'genre:{{genre.name}}', 0
-                                        , '{{ session_id }}',
-                                        '{{ csrf_token }}')">{{ genre.name }}</a> </li>
-                    {% endfor %}
-                    {% endif %}
-                    </ul>
-                </div>
-            </div> -->
             {% block content %}{% endblock content %}
 
         </div>

@@ -153,11 +153,11 @@
                             img.setAttribute('id', movie_id);
                             img.setAttribute('class', 'movie img-rounded');
                             img.setAttribute('src', image_url);
-                            img.setAttribute('style','height: 280px; margin-bottom: 10px; cursor: pointer;')
+                            img.setAttribute('style','width: 70%; margin-bottom: 10px; cursor: pointer;')
                             img.setAttribute('title', title);
 
                             div = document.createElement("div");
-                            div.setAttribute('class', 'col-xs-4');
+                            div.setAttribute('class', 'col-xs-3');
                             div.appendChild(img)
 
                             yolo = document.createElement("p")
@@ -221,7 +221,7 @@
 {% endblock head %}
 
 {% block content %}
-    <div class="col-xs-8 main max-size">
+    <div class="col-xs-10 main max-size">
         <div id="association_rules_recs" class="row" style="display: none">
             <h2>Recommended for you:</h2>
 

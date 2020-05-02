@@ -103,29 +103,26 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="row">
-                <div class="col-sm-12"><h2>Video Title: </h2><h2 id="title"></h2></div></div>
-            <div class="row">
-                <div id="img" class="col-sm-6">
-                    <img id="poster" class="img-responsive" src="" alt="movie poster"/>
-                </div>
-                <div>
-                    <a href="#" type="button" onclick="item_bought()" class="btn btn-danger btn-lg">Watch</a>
-                </div>
-                <hr>
-                <div class="col-sm-6">
-
+                <div class="col-sm-7">
+                    <h2 id="title"></h2>
                     <div><strong>Created On:</strong><p id="release_date"></p></div>
                     <div><strong>Description:</strong><p id="overview"></p></div>
-                    <div><strong>Language (or department):</strong><p id="lan"></p></div>
-                    <div><strong>Average rating (or other indicators like views):</strong><p id="avg_rating"></p></div>
-                    <div><strong>Genres (or other tags like employee role, content group etc.)</strong><p>
+                    <div><strong>Language (or department):&nbsp;</strong><span id="lan"></span></div>
+                    <div><strong>Average rating (or other indicators like views):&nbsp;</strong><span id="avg_rating"></span></div>
+                    <div><strong>Genres (or other tags like employee role, content group etc.) :&nbsp;</strong><span>
                         {% if movie_genres %}
-                            | {% for genre in movie_genres %}
+                             {% for genre in movie_genres %}
                                 {{ genre.name}} |
                             {% endfor %}
                         {% endif %}
-                    </p></div>
-                    
+                    </span></div>
+                </div>
+            
+
+                
+                <div id="img" class="col-sm-5" style="margin-top: 20px;">
+                    <a href="#" type="button" style="margin-bottom: 4px;" onclick="item_bought()" class="btn btn-danger">Watch</a>
+                    <img id="poster" style="width: 40%;" class="img-responsive" src="" alt="movie poster"/>
                 </div>
             </div>
             <div id="recs" class="row" style="visibility: hidden">
